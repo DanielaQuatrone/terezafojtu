@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  position: relative;
+  background-image: linear-gradient(to right top, #e5c6b7, #dbafac, #cb99a8, #b188a8, #8b7ba8);
+  height: 40rem;
+}
+
+.wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wrapper svg {
+    position: relative;
+    display: block;
+    width: calc(103% + 1.3px);
+    height: 147px;
+    transform: rotateY(180deg);
+}
+
+.wrapper .shape-fill {
+    fill: #FFFFFF;
+}
+
+.logo {
+  width: 6rem;
+  height: 100%;
+  background-image: url(./pictures/logo_nav.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+nav header {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+  height: 4rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 35%;
+}
+
+nav a {
+  font-size: 1.25rem;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 100%;
+  height: 33rem;
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  width: 35%;
+  height: 100%;
+  background-image: url(./pictures/tereza_hero.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-left: 8rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  align-items: center;
+  margin-right: 8rem;
+  padding-bottom: 3rem;
+}
+
+.right p {
+  color: #3D3834; 
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+h2 {
+  color: #3d38349a;
+  font-family: 'Playfair Display', serif; 
+  font-size: 5.5rem;
+  font-style: italic; 
+  font-weight: lighter;
+}
+
+h1 {
+  color: #EEEADE;
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif; 
+  font-weight: 900;
+  transform: translateY(-0.6em);
+}
+
+button {
+  font-family: 'Open Sans';
+  background-color: #8B7BA8;
+  color: #EEEADE;
+  border: none;
+  border-radius: 3rem;
+  padding: 0.8rem;
+  width: 6.5rem;
+  font-size: 1rem;
+}
+
+.section_2 {
+ display: flex;
+ width: 100%;
+ height: 33rem;
+}
+
+.left_s2 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  width: 500px;
+  height: 500px;
+  background-image: url(./pictures/s2_logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 1rem 8rem;
+}
+
+.rezerva {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: flex-end;
+  justify-self: flex-end;
+  transform: translate(50px, 50px);
+}
+
+i {
+  cursor: pointer;
+}
+
+.zabezpeceni {
+  grid-column: 3;
+  grid-row: 1;
+  align-self: flex-end;
+  justify-self: center;
+}
+
+.duchod {
+  grid-column: 5;
+  grid-row: 1;
+  align-self: flex-end;
+  justify-self: flex-start;
+  transform: translate(-50px, 50px);
+}
+
+.plany {
+  grid-column: 1;
+  grid-row: 3;
+  align-self: center;
+  justify-self: flex-end;
+}
+
+.baby {
+  grid-column: 1;
+  grid-row: 5;
+  align-self: flex-start;
+  justify-self: flex-end;
+  transform: translate(50px, -50px);
+}
+
+.investice {
+  grid-column: 3;
+  grid-row: 5;
+  justify-self: center;
+}
+
+.heart_7 {
+  grid-column: 5;
+  grid-row: 5;
+  transform: translate(-50px, -50px);
+}
+
+.ochrana {
+  grid-column: 5;
+  grid-row: 3;
+  align-self: center;
+}
+
+.right_s2 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div {
+  color: #3D3834; 
+  text-align: center;
+  font-family: Open Sans;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 10rem;
+}
