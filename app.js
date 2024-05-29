@@ -1,71 +1,59 @@
-let divRight = document.querySelector('.js-div');
-let divLeft = document.querySelector('.left_s2.div');
+let divRight = document.querySelector('.js-text');
+const icons = document.querySelectorAll('.icons');
+let timeoutID;
 
+function highlightIcons(iconIndex) {
+  // Remove any existing timeout
+  clearTimeout(timeoutID);
 
-function playGame() {
-  jsHeart.style.color = "#B9DD8C";
-  let jsHeart = document.querySelector(`${score}`)
- };
+  timeoutID = setTimeout(() => {
+      // Remove 'active' class from any previously active icon
+      const activeIcon = document.querySelector('.active');
+      if (activeIcon) {
+          activeIcon.classList.remove('active');
+      }
 
+      // Add 'active' class to the current icon
+      icons[iconIndex].classList.add('active');
 
-//icons 
-const rezerva = document.querySelector('.rezerva');
-const zabezpeceni = document.querySelector('.zabezpeceni');
-const duchod = document.querySelector('.duchod');
-const plany = document.querySelector('.plany');
-const baby = document.querySelector('.baby');
-const investice = document.querySelector('.investice');
-const ochrana = document.querySelector('.ochrana');
+      // Set text content from dataset.text
+      const text = icons[iconIndex].dataset.text;
+      divRight.innerText = text;
 
+      // Move to the next icon index
+      const nextIndex = (iconIndex + 1) % icons.length;
 
-rezerva.addEventListener("mouseover", function () {
-  let score = '';
-  divRight.innerText = "si správně tvořit finanční rezervu"
-  score = '.js-heart1';
-});
-
-zabezpeceni.addEventListener("mouseover", function () {
-  divRight.innerText = "poctivě zabezpečit své zdraví a svoji rodinu"
-  score = '.js-heart2';
-});
-
-duchod.addEventListener("mouseover", function () {
-  divRight.innerText = "se připravit na své stáří"
-  score = '.js-heart3';
-  hrom();
-});
-
-plany.addEventListener("mouseover", function () {
-  divRight.innerText = "snadno ušetřit na krátkodobé plány (dovolená, nové auto,..)"
-  score = '.js-heart4';
-});
-
-baby.addEventListener("mouseover", function () {
-  divRight.innerText = "se připravit na očekávanou i neočekávanou mateřskou dovolenou"
-  score = '.js-heart5';
-});
-
-investice.addEventListener("mouseover", function () {
-  divRight.innerText = "pomocí investic realizovat své vysněné dlouhodobé plány (koupě nemovitosti, děti)"
-  score = '.js-heart6';
-});
-
-ochrana.addEventListener("mouseover", function () {
-  divRight.innerText = "poctivě zabezpečit své zdraví a svoji rodinu"
-  score = '.js-heart8';
-});
-
-
-  
-
-/*
-rezerva.addEventListener("mouseover", showText)
-rezerva.addEventListener("mouseout", undoText)
-
-function showText(){
-  divRight.innerText = "si správně tvořit finanční rezervu";
+      // Call the function recursively with the next index
+      highlightIcons(nextIndex);
+  }, 3000); // 3 seconds
 }
 
-function undoText() {
-  divRight.innerText = "";
-}*/
+// Start the loop by calling the function with index 0
+highlightIcons(0);
+
+icons.forEach(icon => {
+  icon.addEventListener('mouseover', function(){
+    // Remove the timeout when hovering over an icon
+    clearTimeout(timeoutID);
+
+    document.querySelector('.active')?.classList.remove('active');
+    icon.classList.add('active');
+    let text = icon.dataset.text; // Use let instead of const
+    divRight.innerText = text;
+  });
+
+  icon.addEventListener('mouseleave', function() {
+    // Restart the timeout when mouse leaves the icon
+    highlightIcons([...icons].indexOf(icon));
+  });
+});
+
+const hamburger = document.querySelector(".hamburger");
+const navbar = document.querySelector(".navbar");
+const loham = document.querySelector(".loham");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("ahoj");
+  navbar.classList.toggle("ahoj");
+  loham.classList.toggle("ahoj")
+})
