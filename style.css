@@ -7,6 +7,10 @@
   }
 
 /*navbar*/
+.hamburger {
+  display: none;
+}
+
 .mobile_navbar {
   display: none;
 }
@@ -42,12 +46,6 @@ nav ul {
   background-color: #009FB5; 
   color: white;
   border-radius: 0.5em;
-}
-
-.hamburger {
-  display: none;
-  cursor: pointer;
-  padding-right: 2em;
 }
 
 .bar {
@@ -362,6 +360,14 @@ h2 {
 /*Mobile Media*/
 @media screen and (max-width: 1300px){
 /*navbar*/
+h1 {
+  font-size: 10em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
 .mobile_navbar {
 display: flex;
 align-items: center;
@@ -377,6 +383,8 @@ padding: 1em 2em 1em 2em;
 .hamburger {
 display: block;
 z-index: 500 !important;
+cursor: pointer;
+padding-right: 2em;
 }
 
 .hamburger.ahoj .bar:nth-child(2){
@@ -396,24 +404,25 @@ transform: translateY(-16px) rotate(-45deg);
   display: none;
 }
 
-.mobile_flex_hero {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.mobileHeroText {
   align-items: center;
   background: linear-gradient(90deg, #ACD8E1, #7CC4D1); 
-  padding-bottom: 1em;
-}
-
-.mobileHeroText {
-  width: 50%;
+  padding: 3em;
 }
 
 .button_hero {
-font-size: 1rem;
+font-size: 2rem;
 }
 
 /*sluzby*/
+.naucimtejak {
+  font-weight: 500;
+  text-align: center;
+  margin-top: 2em;
+  font-size: 2.5em;
+  font-family: "Poppins", sans-serif;
+}
+
 .flex_sluzby{
   display: none;
 }
@@ -421,9 +430,9 @@ font-size: 1rem;
 .flex_sluzby_mobile{
   display: flex;
   flex-direction: column;
-  margin-left: 5em;
-  margin-bottom: 1em;
-  font-size: 1.5em;
+  margin-left: 2em;
+  margin-bottom: 2em;
+  font-size: 2em;
   margin-top: 1em;
 }
 
